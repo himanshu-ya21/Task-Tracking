@@ -1,79 +1,136 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Task Tracking App
 
-# Getting Started
+A React Native mobile application for managing and tracking tasks efficiently. Built with modern technologies including Redux for state management, SQLite for local storage, and Firebase for messaging capabilities.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Features
 
-## Step 1: Start the Metro Server
+- **Task Management**: Create, view, and edit tasks with titles and timestamps
+- **Local Storage**: Persistent data storage using SQLite database
+- **State Management**: Redux Toolkit for predictable state management
+- **Navigation**: Smooth navigation between task list and task form screens
+- **Cross-Platform**: Supports both iOS and Android devices
+- **Firebase Integration**: Ready for push notifications and messaging (currently configured)
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Technology Stack
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- **React Native**: Framework for building native mobile apps
+- **Redux Toolkit**: State management library
+- **SQLite**: Local database for data persistence
+- **React Navigation**: Navigation library for screen transitions
+- **Firebase**: Backend services for messaging and notifications
+- **TypeScript**: Type safety and better development experience
 
-```bash
-# using npm
-npm start
+## Prerequisites
 
-# OR using Yarn
-yarn start
+Before you begin, ensure you have the following installed:
+
+- Node.js (version 18 or higher)
+- npm or yarn
+- React Native development environment
+- Xcode (for iOS development)
+- Android Studio (for Android development)
+
+## Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd TaskTracking
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **iOS Setup:**
+   ```bash
+   cd ios
+   pod install
+   cd ..
+   ```
+
+4. **Android Setup:**
+   - Ensure Android SDK is properly configured
+   - Copy `google-services.json` to `android/app/` directory
+
+5. **Firebase Configuration:**
+   - For iOS: Add `GoogleService-Info.plist` to `ios/TaskTracking/` directory
+   - For Android: Add `google-services.json` to `android/app/` directory
+
+## Usage
+
+1. **Start the Metro bundler:**
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
+
+2. **Run on iOS:**
+   ```bash
+   npm run ios
+   # or
+   yarn ios
+   ```
+
+3. **Run on Android:**
+   ```bash
+   npm run android
+   # or
+   yarn android
+   ```
+
+## Project Structure
+
+```
+TaskTracking/
+├── android/                 # Android specific files
+├── ios/                     # iOS specific files
+├── src/
+│   ├── components/          # Reusable UI components
+│   ├── database/            # SQLite database configuration
+│   ├── redux/               # State management (store, slices, hooks)
+│   ├── screens/             # App screens (TaskList, TaskForm)
+│   └── utils/               # Utility functions (Firebase config)
+├── App.js                  # Main app component
+├── package.json            # Dependencies and scripts
+└── README.md               # Project documentation
 ```
 
-## Step 2: Start your Application
+## Key Components
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+- **TaskListScreen**: Displays all tasks in a scrollable list
+- **TaskFormScreen**: Form for creating and editing tasks
+- **Database**: SQLite operations for task persistence
+- **Redux Store**: Centralized state management for tasks
 
-### For Android
+## Development
 
-```bash
-# using npm
-npm run android
+- **Linting:** `npm run lint`
+- **Testing:** `npm test`
+- **Type Checking:** TypeScript is configured for better development experience
 
-# OR using Yarn
-yarn android
-```
+## Troubleshooting
 
-### For iOS
+If you encounter issues:
 
-```bash
-# using npm
-npm run ios
+1. Clear Metro cache: `npx react-native start --reset-cache`
+2. Clean and rebuild:
+   - iOS: `cd ios && rm -rf build && cd .. && npm run ios`
+   - Android: `cd android && ./gradlew clean && cd .. && npm run android`
+3. Reinstall pods: `cd ios && pod install`
 
-# OR using Yarn
-yarn ios
-```
+## Contributing
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests and linting
+5. Submit a pull request
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## License
 
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is licensed under the MIT License.
